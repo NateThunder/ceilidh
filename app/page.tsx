@@ -3,12 +3,13 @@
 import { motion } from "framer-motion";
 import { ChevronRight, Music, Users, Calendar, Mail, Instagram, Facebook, Youtube } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen bg-neutral-950">
+    <div className="flex flex-col min-h-screen bg-[#0B0F19]">
       {/* Navigation */}
-      <nav className="fixed w-full z-50 bg-neutral-950/80 backdrop-blur-sm border-b border-neutral-800">
+      <nav className="fixed w-full z-50 bg-[#0B0F19]/80 backdrop-blur-sm border-b border-white/5">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <div className="text-2xl font-serif tracking-widest text-gold-500">
             ELYSIA <span className="text-xs tracking-normal font-sans ml-1 text-neutral-400 italic">CEILIDH</span>
@@ -39,7 +40,7 @@ export default function Home() {
             <source src="https://cdn.pixabay.com/video/2021/04/24/72082-542034171_large.mp4" type="video/mp4" />
           </video>
         </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-neutral-950/40 via-neutral-950/70 to-neutral-950" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0B0F19]/40 via-[#0B0F19]/70 to-[#0B0F19]" />
 
         <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
           <motion.div
@@ -68,16 +69,17 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-24 px-6 bg-neutral-950">
+      <section id="about" className="py-24 px-6 bg-[#0B0F19]">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div className="relative aspect-[4/5] overflow-hidden">
                <div className="absolute inset-0 grayscale hover:grayscale-0 transition-all duration-700 scale-110">
-                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                 <img
+                 <Image
                    src="https://images.unsplash.com/photo-1465821508027-5815ad7258aa?auto=format&fit=crop&q=80"
                    alt="Band"
-                   className="w-full h-full object-cover"
+                   fill
+                   className="object-cover"
+                   sizes="(max-width: 1024px) 100vw, 50vw"
                  />
                </div>
                <div className="absolute inset-0 bg-gold-500/10 mix-blend-multiply" />
@@ -150,31 +152,42 @@ export default function Home() {
       </section>
 
       {/* Watch/Listen Section */}
-      <section id="watch" className="py-24 px-6 bg-neutral-950 overflow-hidden">
-         <div className="max-w-7xl mx-auto flex flex-col items-center">
-            <div className="max-w-3xl text-center mb-16">
-              <h2 className="text-4xl md:text-6xl font-serif mb-8">The Visual Experience</h2>
-              <p className="text-neutral-400 text-lg italic">&quot;A performance that is as stunning to watch as it is to dance to.&quot;</p>
+      <section id="watch" className="py-24 px-6 bg-[#0B0F19] overflow-hidden">
+         <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-20">
+              <span className="text-gold-500 tracking-widest uppercase text-sm mb-6 block">The Gallery</span>
+              <h2 className="text-4xl md:text-6xl font-serif mb-8">Visual Artistry</h2>
+              <p className="text-neutral-400 text-lg italic max-w-2xl mx-auto">&quot;A performance that is as stunning to watch as it is to dance to.&quot;</p>
             </div>
 
-            <div className="w-full aspect-video bg-neutral-900 relative group cursor-pointer overflow-hidden border border-neutral-800">
-               <div className="absolute inset-0 opacity-40 group-hover:scale-105 transition-transform duration-1000">
-                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                 <img
-                   src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&q=80"
-                   alt="Showcase"
-                   className="w-full h-full object-cover"
-                 />
-               </div>
-               <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-20 h-20 border border-gold-500 rounded-full flex items-center justify-center bg-neutral-950/40 group-hover:bg-gold-500/10 transition-all group-hover:scale-110">
-                    <div className="w-0 h-0 border-t-[10px] border-t-transparent border-l-[15px] border-l-gold-500 border-b-[10px] border-b-transparent ml-1" />
-                  </div>
-               </div>
-               <div className="absolute bottom-10 left-10">
-                  <span className="text-gold-500 tracking-widest uppercase text-xs mb-2 block font-sans">Live @ Edinburgh Castle</span>
-                  <div className="text-2xl font-serif">A Highland Soirée</div>
-               </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {[
+                { title: "A Highland Soirée", location: "Live @ Edinburgh Castle", img: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&q=80" },
+                { title: "Midnight Reels", location: "Stirling Great Hall", img: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?auto=format&fit=crop&q=80" },
+                { title: "Shetland Sessions", location: "Bespoke Garden Marquee", img: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&q=80" },
+                { title: "The Modern Ceilidh", location: "Grand Central Glasgow", img: "https://images.unsplash.com/photo-1514525253361-bee8718a300c?auto=format&fit=crop&q=80" }
+              ].map((video, i) => (
+                <div key={i} className="w-full aspect-video bg-neutral-900/50 relative group cursor-pointer overflow-hidden border border-white/5 hover:border-gold-500/30 transition-all duration-700">
+                   <div className="absolute inset-0 opacity-40 group-hover:scale-105 group-hover:opacity-60 transition-all duration-1000">
+                     <Image
+                       src={video.img}
+                       alt={video.title}
+                       fill
+                       className="object-cover"
+                       sizes="(max-width: 768px) 100vw, 50vw"
+                     />
+                   </div>
+                   <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="w-16 h-16 border border-white/20 rounded-full flex items-center justify-center bg-black/20 group-hover:border-gold-500 group-hover:bg-gold-500/10 transition-all group-hover:scale-110">
+                        <div className="w-0 h-0 border-t-[8px] border-t-transparent border-l-[12px] border-l-white group-hover:border-l-gold-500 border-b-[8px] border-b-transparent ml-1" />
+                      </div>
+                   </div>
+                   <div className="absolute bottom-8 left-8">
+                      <span className="text-gold-500 tracking-widest uppercase text-[10px] mb-2 block font-sans">{video.location}</span>
+                      <div className="text-xl font-serif">{video.title}</div>
+                   </div>
+                </div>
+              ))}
             </div>
          </div>
       </section>
@@ -197,7 +210,7 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-24 px-6 bg-neutral-950">
+      <section id="contact" className="py-24 px-6 bg-[#0B0F19]">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
             <div>
@@ -259,7 +272,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="py-20 px-6 border-t border-neutral-900 bg-black">
+      <footer className="py-20 px-6 border-t border-white/5 bg-[#05070A]">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center">
           <div className="text-2xl font-serif tracking-widest text-gold-500 mb-8 md:mb-0">
             ELYSIA <span className="text-xs tracking-normal font-sans ml-1 text-neutral-400 italic">CEILIDH</span>

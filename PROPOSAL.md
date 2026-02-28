@@ -22,7 +22,7 @@ The design will be **"Dark & Sophisticated"**, utilizing rich textures, elegant 
 4. **Clean Codebase:** No "weird addons" or bloated plugins. Pure, optimized React components.
 
 ## 4. Design Strategy (Dark & Sophisticated)
-- **Palette:** Deep Charcoal (#121212), Matte Black (#0A0A0A), and Metallic Gold accents (#D4AF37).
+- **Palette:** Midnight Navy (#0B0F19), Deep Navy (#05070A), and Metallic Gold accents (#D4AF37).
 - **Typography:** A combination of a sophisticated Serif for headings (classic elegance) and a clean Sans-Serif for body text (modern readability).
 - **Imagery:** High-contrast, professional mock media focused on the artistry of the instruments and the energy of the dance.
 
