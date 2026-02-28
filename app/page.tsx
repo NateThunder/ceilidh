@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import { ChevronRight, Music, Users, Calendar, Mail, Instagram, Facebook, Youtube } from "lucide-react";
 import Link from "next/link";
-import { cn } from "@/lib/utils";
 
 export default function Home() {
   return (
@@ -28,14 +27,19 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden pt-20">
-        <div className="absolute inset-0 opacity-20 scale-105">
-          <img
-            src="https://images.unsplash.com/photo-1514525253361-bee8718a300c?auto=format&fit=crop&q=80"
-            alt="Hero Background"
+        <div className="absolute inset-0 opacity-30 scale-105">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
             className="w-full h-full object-cover"
-          />
+            poster="https://images.unsplash.com/photo-1514525253361-bee8718a300c?auto=format&fit=crop&q=80"
+          >
+            <source src="https://cdn.pixabay.com/video/2021/04/24/72082-542034171_large.mp4" type="video/mp4" />
+          </video>
         </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-neutral-950/50 via-neutral-950/80 to-neutral-950" />
+        <div className="absolute inset-0 bg-gradient-to-b from-neutral-950/40 via-neutral-950/70 to-neutral-950" />
 
         <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
           <motion.div
@@ -69,6 +73,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div className="relative aspect-[4/5] overflow-hidden">
                <div className="absolute inset-0 grayscale hover:grayscale-0 transition-all duration-700 scale-110">
+                 {/* eslint-disable-next-line @next/next/no-img-element */}
                  <img
                    src="https://images.unsplash.com/photo-1465821508027-5815ad7258aa?auto=format&fit=crop&q=80"
                    alt="Band"
@@ -82,7 +87,7 @@ export default function Home() {
               <h2 className="text-4xl md:text-6xl font-serif mb-8 leading-tight">Artistry Meets Energy</h2>
               <div className="space-y-6 text-neutral-400 leading-relaxed text-lg">
                 <p>
-                  Elysia Ceilidh is not just a band; it's a curated collective of Scotland's most talented folk musicians,
+                  Elysia Ceilidh is not just a band; it&apos;s a curated collective of Scotland&apos;s most talented folk musicians,
                   dedicated to elevating the ceilidh experience.
                 </p>
                 <p>
@@ -149,11 +154,12 @@ export default function Home() {
          <div className="max-w-7xl mx-auto flex flex-col items-center">
             <div className="max-w-3xl text-center mb-16">
               <h2 className="text-4xl md:text-6xl font-serif mb-8">The Visual Experience</h2>
-              <p className="text-neutral-400 text-lg italic">"A performance that is as stunning to watch as it is to dance to."</p>
+              <p className="text-neutral-400 text-lg italic">&quot;A performance that is as stunning to watch as it is to dance to.&quot;</p>
             </div>
 
             <div className="w-full aspect-video bg-neutral-900 relative group cursor-pointer overflow-hidden border border-neutral-800">
                <div className="absolute inset-0 opacity-40 group-hover:scale-105 transition-transform duration-1000">
+                 {/* eslint-disable-next-line @next/next/no-img-element */}
                  <img
                    src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&q=80"
                    alt="Showcase"
@@ -180,8 +186,8 @@ export default function Home() {
             {[1,2,3,4,5].map(i => <span key={i} className="text-xl">★</span>)}
           </div>
           <blockquote className="text-2xl md:text-4xl font-serif mb-12 leading-relaxed">
-            "The level of professionalism and talent was beyond anything we've ever experienced.
-            They turned our wedding into the event of the decade. Simply world-class."
+            &quot;The level of professionalism and talent was beyond anything we&apos;ve ever experienced.
+            They turned our wedding into the event of the decade. Simply world-class.&quot;
           </blockquote>
           <cite className="not-italic">
             <span className="block text-white font-semibold tracking-widest uppercase text-sm mb-1">Victoria & James Sutherland</span>
@@ -196,7 +202,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
             <div>
               <span className="text-gold-500 tracking-widest uppercase text-sm mb-6 block font-sans">Availability</span>
-              <h2 className="text-4xl md:text-6xl font-serif mb-8">Let's Discuss Your Event</h2>
+              <h2 className="text-4xl md:text-6xl font-serif mb-8">Let&apos;s Discuss Your Event</h2>
               <p className="text-neutral-400 text-lg mb-12 font-sans">
                 We are now booking for late 2026 and 2027. To maintain our standard of excellence, we only accept a limited number of engagements per year.
               </p>
